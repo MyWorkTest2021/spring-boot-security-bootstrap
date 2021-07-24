@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<meta charset="UTF-8">
+<title>Update user</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+</head>
+<body>
+<ul class="nav justify-content-right">
+    <li class="nav-item">
+        <a class="nav-link active" href="/login">Log out</a>
+    </li>
+
+</ul>
+<br><br>
+
+<div class="container" align="center">
+
+    <h2 style="color: rebeccapurple">update user</h2>
+    <hr>
+    <form th:method="post" th:action="@{/update}" th:object="${user}" >
+        <input readonly type="hidden" th:field="*{id}" id="id" placeholder="ID">
+        <br/><br>
+        <input style="background: powderblue" type="text" class="control-input col-sm-6" th:field="*{name}" id="name" placeholder="Name">
+        <br/><br>
+        <input style="background: powderblue" type="text" class="control-input col-sm-6" th:field="*{email}" id="email" placeholder="Email">
+        <br><br>
+        <input style="background: powderblue" type="text" class="control-input col-sm-6" th:field="*{password}" id="password" placeholder="Password">
+        <br><br>
+        <input style="background: powderblue" type="text" class="control-input col-sm-6" th:field="*{age}" id="age" placeholder="Age">
+        <p>
+        <li th:each="role : ${allRoles}">
+            <label>
+                <input th:type="checkbox" th:name="${role}">
+                <span th:text="${role}"></span>
+            </label>
+        </li>
+        </p>
+        <br>
+        <input style="background-color: dodgerblue" type="submit" value="Update user">
+    </form>
+</div>
+<hr>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</body>
+</html>
